@@ -1,0 +1,7 @@
+.DS_Status
+*.swp
+__pycache__/
+.venv/
+old/
+requirements.txt
+requirements2.txt

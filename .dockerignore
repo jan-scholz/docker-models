@@ -1,0 +1,5 @@
+old
+.pytest_cache
+.ipynb_checkpoints
+__pycache__
+.venv
