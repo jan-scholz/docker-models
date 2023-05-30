@@ -8,8 +8,7 @@ import time
 import docker
 
 
-def sim():
-    n = 10
+def sim(n=10):
     b = 5
     b_price = 1.0
     b_promo = 2.0
@@ -39,7 +38,7 @@ def sim():
 def main():
     base_url = "http://localhost:8000/"
     url = base_url + "fit/"
-    df = sim()
+    df = sim(n=200)
     post_data = {
         "name": "linear_regression",
         "y_name": "qty",
@@ -56,7 +55,7 @@ def main():
     )
 
     max_tries = 12
-    init_wait = 0.8
+    init_wait = 0.7
     incr_wait = 0.08
 
     start = time.time()
