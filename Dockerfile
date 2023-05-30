@@ -26,4 +26,6 @@ COPY --from=builder /install /usr/local/lib/python3.11/site-packages
 
 COPY ./app /code/app
 
+RUN python -m compileall app
+
 CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log", "--log-level", "critical"]
