@@ -62,6 +62,7 @@ def main():
     time.sleep(init_wait)
     for i in range(max_tries):
         try:
+            # query container.status == "running" instead?
             resp = requests.get(base_url)
             break
         except requests.exceptions.ConnectionError:
