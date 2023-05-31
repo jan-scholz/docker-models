@@ -62,27 +62,35 @@ time (for i in `seq 20`; do  docker run --rm -p 8000:8000 --name foo -d myapp &&
 
 
 ## build image
+```sh
 docker build -t foo_ex .
 docker build -t foo_ex --progress=plain --no-cache .
+```
 
 
 ## test image
+```sh
 docker run --rm -t foo_ex -c "print('foo')"
 docker run --rm -t foo_ex -c "import numpy as np; print(np.random.random())"
+```
 
 
 ## inspect image, TAB to switch
+```sh
 dive build -t foo_ex .   
+```
 
 
 ## slim builds
 
 ### testing
 
+```sh
 docker pull --platform linux/x86_64 archlinux:latest
 
 slim build --target archlinux:latest --tag archlinux:curl --http-probe=false --exec "curl checkip.amazonaws.com"
 
 docker run archlinux:curl curl checkip.amazonaws.com
+```
 
 
